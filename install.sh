@@ -6,6 +6,10 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle
 # install powerline/fonts
 cd ~ && git clone https://github.com/powerline/fonts.git
 ~/fonts/install.sh
+if [ -d ~/fonts ]
+then
+	rm -rf ~/fonts;
+fi
 # install pathogen
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 # install vim plugin
