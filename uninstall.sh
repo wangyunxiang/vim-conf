@@ -12,3 +12,4 @@ do
 done
 
 cat /dev/null >> ~/.vimrc
+sed -i '/stty -ixon/d' ~/.bashrc
