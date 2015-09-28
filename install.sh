@@ -1,7 +1,7 @@
 #!/bin/bash
 
 src_dir=$(pwd)
-mkdir ~/.vim/autoload ~/.vim/bundle
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 
 # install powerline/fonts
 cd ~ && git clone https://github.com/powerline/fonts.git
