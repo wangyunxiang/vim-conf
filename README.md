@@ -33,4 +33,8 @@ install:
 
 git clone git@github.com:wangyunxiang/vim-conf.git
 
-./vim-conf/install.sh
+./install.sh
+
+uninstall:
+
+./uninstall.sh
