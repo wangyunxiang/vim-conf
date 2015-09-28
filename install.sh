@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=$(owd)
+src_dir=$(pwd)
 mkdir ~/.vim/autoload ~/.vim/bundle
 
 # install powerline/fonts
@@ -25,5 +25,4 @@ git clone https://github.com/tpope/vim-surround.git
 echo "stty -ixon" >> ~/.bashrc
 
 # copy the vimrc
-\cp $dir/vimrc ~/.vimrc
-
+\cp $src_dir/vimrc ~/.vimrc
