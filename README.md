@@ -31,7 +31,7 @@ vim-surround
 
 install:
 
-git clone git@github.com:wangyunxiang/vim-conf.git
+git clone https://github.com/wangyunxiang/vim-conf.git
 
 ./install.sh
 
