@@ -1,40 +1,32 @@
 # vim-conf
+
 my own vim configuration and plugin
-
-plugin management:
-
+------
+### plugin management:
+```
 pathogen.vim
-
-vim plugian:
-
+```
+### vim plugian:
+```
 nerdtree
-
 ShowMarks
-
 vim-airline
-
 nerdcommenter
-
 auto_mkdir
-
 supertab
-
 winmanager
-
 matchit
-
 Gundo
-
 tabular
-
 vim-surround
-
-install:
-
+```
+### install:
+```
 git clone https://github.com/wangyunxiang/vim-conf.git
 
 ./install.sh
-
-uninstall:
-
+```
+### uninstall:
+```
 ./uninstall.sh
+```
