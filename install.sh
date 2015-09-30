@@ -25,6 +25,7 @@ git clone https://github.com/vim-scripts/matchit.zip.git
 git clone https://github.com/vim-scripts/Gundo.git
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/tpope/vim-surround.git
+git clone https://github.com/kien/ctrlp.vim.git
 # for cancel <ctrl> S
 echo "stty -ixon" >> ~/.bashrc
 
