@@ -8,6 +8,7 @@ pathogen.vim
 ```
 ### vim plugian:
 ```
+taglist
 nerdtree
 ShowMarks
 vim-airline

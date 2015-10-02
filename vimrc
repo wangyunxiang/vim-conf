@@ -26,6 +26,7 @@ set showmatch
 syntax enable
 colorscheme desert
 set background=dark
+set foldmethod=indent
 
 " encoding
 set encoding=utf8
@@ -41,13 +42,17 @@ set nowb
 "
 """"""""""""""""""""""""""""
 map <F2> :w<CR>
-map <F3> :NERDTreeMirror<CR>
-map <F3> :NERDTreeToggle<CR>
-"map <F4> :set paste<CR>
-"map <F5> :set nopaste<CR>
+nmap <silent> <F3> :WMToggle<cr>
+nnoremap <F4> :GundoToggle<CR>
+map <F5> :NERDTreeMirror<CR>
+map <F5> :NERDTreeToggle<CR>
+map <F6> :Tlist<CR>
 map <F8> :sh<CR>
 map <F12> :q<CR>
-nmap hl :nohl<CR>
+nmap <Leader>nc :set nonu<CR>
+nmap <Leader>no :set nu<CR>
+nmap <Leader>xp :set paste<CR>
+nmap <Leader>hl :nohl<CR>
 
 """"""""""""""""""""""""""""""""
 " for plugin management:pathogen
@@ -57,8 +62,8 @@ execute pathogen#infect()
 """"""""""""""""""""""""""""""""
 " for winManager
 """"""""""""""""""""""""""""""""
-let g:winManagerWindowLayout = "FileExplorer|FileExplorer"
-nmap <silent> <F7> :WMToggle<cr>
+let g:winManagerWindowLayout = "FileExplorer|TagList"
+let g:winManagerWidth = 40
 
 """"""""""""""""""""""""""""""
 " showmarks setting
@@ -71,7 +76,7 @@ let showmarks_include ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let showmarks_ignore_type = "hqm"
 " Hilight lower & upper marks
 let showmarks_hlline_lower = 1
-let showmarks_hlline_upper = 1 
+let showmarks_hlline_upper = 1
 
 " For showmarks plugin
 hi ShowMarksHLl ctermbg=Yellow   ctermfg=Black  guibg=#FFDB72    guifg=Black
@@ -89,13 +94,19 @@ let g:airline_exclude_filename = []
 let g:Powerline_symbols='fancy'
 let g:airline_powerline_fonts=0
 let g:bufferline_echo=0
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 set laststatus=2
 set t_Co=256
 " file buffers tabline
@@ -103,7 +114,7 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 
-"powerline
+" for powerline
 "set guifont=PowerlineSymbols\ for\ Powerline
 "set nocompatible
 "set t_Co=256
@@ -112,11 +123,21 @@ nnoremap ]b :bn<CR>
 let loaded_matchit = 0
 
 " for gundo
-nnoremap <F4> :GundoToggle<CR>
-let g:gundo_width = 60
 let g:gundo_right = 1
-let g:gundo_preview_height = 15
+
+" for ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " for tabular
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+
+" for ctags and taglist
+set tags=$PWD/tags
+"let Tlist_Auto_Open = 1
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Use_Right_Window=1

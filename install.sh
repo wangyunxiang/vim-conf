@@ -14,13 +14,14 @@ fi
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 # install vim plugin
 cd ~/.vim/bundle
+git clone https://github.com/vim-scripts/winmanager.git
 git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/vim-scripts/taglist.vim.git
 git clone https://github.com/vim-scripts/ShowMarks.git
 git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/scrooloose/nerdcommenter.git
 git clone https://github.com/vim-scripts/auto_mkdir.git
 git clone https://github.com/ervandew/supertab.git
-git clone https://github.com/vim-scripts/winmanager.git
 git clone https://github.com/vim-scripts/matchit.zip.git
 git clone https://github.com/vim-scripts/Gundo.git
 git clone https://github.com/godlygeek/tabular.git
