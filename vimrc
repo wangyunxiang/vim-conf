@@ -47,12 +47,17 @@ nnoremap <F4> :GundoToggle<CR>
 map <F5> :NERDTreeMirror<CR>
 map <F5> :NERDTreeToggle<CR>
 map <F6> :Tlist<CR>
-map <F8> :sh<CR>
+"nnoremap <F7> :tabp<CR>
+""nnoremap <F9> :tabn<CR>
+nnoremap <F7> gT
+nnoremap <F9> gt
+map <F10> :sh<CR>
 map <F12> :q<CR>
 nmap <Leader>nc :set nonu<CR>
 nmap <Leader>no :set nu<CR>
 nmap <Leader>xp :set paste<CR>
 nmap <Leader>hl :nohl<CR>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 """"""""""""""""""""""""""""""""
 " for plugin management:pathogen
@@ -79,8 +84,8 @@ let showmarks_hlline_lower = 1
 let showmarks_hlline_upper = 1
 
 " For showmarks plugin
-hi ShowMarksHLl ctermbg=Yellow   ctermfg=Black  guibg=#FFDB72    guifg=Black
-hi ShowMarksHLu ctermbg=Magenta  ctermfg=Black  guibg=#FFB3FF    guifg=Black
+" hi ShowMarksHLl ctermbg=Yellow   ctermfg=Black  guibg=#FFDB72    guifg=Black
+" hi ShowMarksHLu ctermbg=Magenta  ctermfg=Black  guibg=#FFB3FF    guifg=Black
 
 """"""""""""""""""""""""""""""
 "    for airline
@@ -129,10 +134,8 @@ let g:gundo_right = 1
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " for tabular
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>a :Tabularize /
+vmap <Leader>a :Tabularize /
 
 " for ctags and taglist
 set tags=$PWD/tags
@@ -141,3 +144,4 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Use_Right_Window=1
+
