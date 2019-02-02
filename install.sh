@@ -8,7 +8,7 @@ cd ~ && git clone git://github.com/seebi/dircolors-solarized.git
 sleep 5
 mv ~/dircolors-solarized ~/.dircolors-solarized
 echo 'case "$TERM" in' >> ~/.bashrc
-echo '    xterm)' >>>> ~/.bashrc
+echo '    xterm)' >> ~/.bashrc
 echo '        export TERM=xterm-256color' >> ~/.bashrc
 echo '        ;;' >> ~/.bashrc
 echo '    screen)' >> ~/.bashrc
