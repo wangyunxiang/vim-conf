@@ -9,7 +9,6 @@ set autoread
 set wildmenu
 set ruler
 set cmdheight=2
-colorscheme desert
 "set backspace=eol,start,indent
 "set whichwrap+=<,>,h,j
 set autoindent
@@ -24,8 +23,9 @@ set lazyredraw
 set magic
 set showmatch
 syntax enable
-colorscheme desert
+colorscheme gruvbox
 set background=dark
+
 set foldmethod=indent
 
 " encoding
@@ -44,18 +44,15 @@ set nowb
 map <F2> :w<CR>
 nmap <silent> <F3> :WMToggle<cr>
 nnoremap <F4> :GundoToggle<CR>
-map <F5> :NERDTreeMirror<CR>
-map <F5> :NERDTreeToggle<CR>
-map <F6> :Tlist<CR>
+
 "nnoremap <F7> :tabp<CR>
 ""nnoremap <F9> :tabn<CR>
 nnoremap <F7> gT
 nnoremap <F9> gt
-map <F10> :sh<CR>
+map <F10> :ConqueTermVSplit bash<CR>
 map <F12> :q<CR>
 nmap <Leader>nc :set nonu<CR>
 nmap <Leader>no :set nu<CR>
-nmap <Leader>xp :set paste<CR>
 nmap <Leader>hl :nohl<CR>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
@@ -67,8 +64,20 @@ execute pathogen#infect()
 """"""""""""""""""""""""""""""""
 " for winManager
 """"""""""""""""""""""""""""""""
-let g:winManagerWindowLayout = "FileExplorer|TagList"
+autocmd BufEnter * if 0 == len(filter(range(1, winnr('$')), 'empty(getbufvar(winbufnr(v:val), "&bt"))')) | qa! | endif
+
+let g:NERDTree_title='[NERD Tree]'
+let g:winManagerWindowLayout = "NERDTree|TagList"
 let g:winManagerWidth = 40
+
+function! NERDTree_Start()  
+    exec 'NERDTree'  
+endfunction  
+  
+function! NERDTree_IsValid()  
+    return 1  
+endfunction  
+
 
 """"""""""""""""""""""""""""""
 " showmarks setting
@@ -119,12 +128,7 @@ let g:airline#extensions#tabline#enabled = 1
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 
-" for powerline
-"set guifont=PowerlineSymbols\ for\ Powerline
-"set nocompatible
-"set t_Co=256
-"let g:Powerline_symbols = 'fancy'
-
+" for matchit
 let loaded_matchit = 0
 
 " for gundo
@@ -136,12 +140,18 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " for tabular
 nmap <Leader>a :Tabularize /
 vmap <Leader>a :Tabularize /
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+
 
 " for ctags and taglist
 set tags=$PWD/tags
 "let Tlist_Auto_Open = 1
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Use_Right_Window=1
+let Tlist_Ctags_Cmd        = '/usr/local/bin/ctags'
+let Tlist_Show_One_File    = 1
+let Tlist_Exit_OnlyWindow  = 1
+let Tlist_Use_Right_Window = 1
 
+" for conque
