@@ -3,6 +3,22 @@
 src_dir=$(pwd)
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/colors
 
+# install solarized terminal
+cd ~ && git clone git://github.com/seebi/dircolors-solarized.git
+sleep 5
+mv ~/dircolors-solarized ~/.dircolors-solarized
+echo 'case "$TERM" in' >> ~/.bashrc
+echo '    xterm)' >>>> ~/.bashrc
+echo '        export TERM=xterm-256color' >> ~/.bashrc
+echo '        ;;' >> ~/.bashrc
+echo '    screen)' >> ~/.bashrc
+echo '        export TERM=screen-256color' >> ~/.bashrc
+echo '        ;;' >> ~/.bashrc
+echo 'esac' >> ~/.bashrc
+echo 'eval `dircolors ~/.dircolors-solarized/dircolors.256dark`' >> ~/.bashrc
+source ~/.bashrc
+
+
 # install powerline/fonts
 cd ~ && git clone https://github.com/powerline/fonts.git
 ~/fonts/install.sh
