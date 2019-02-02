@@ -22,7 +22,9 @@ set incsearch
 set lazyredraw
 set magic
 set showmatch
+set paste
 syntax enable
+
 colorscheme gruvbox
 set background=dark
 

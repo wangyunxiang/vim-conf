@@ -26,7 +26,7 @@ then
 fi
 
 # install pathogen
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+curl --connect-timeout 10 --retry 5 -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 # install vim plugin
 cd ~/.vim/bundle
 git clone https://github.com/vim-scripts/winmanager.git
@@ -52,6 +52,7 @@ git clone https://github.com/luochen1990/rainbow.git
 cp -r $src_dir/conque ~/.vim/bundle/
 
 # fix winmanager bug
+patch -p0 ~/.vim/bundle/winmanager/plugin/winmanager.vim $src_dir/winmanager.patch
 
 # fix taglist bug
 patch -p0 ~/.vim/bundle/taglist.vim/plugin/taglist.vim $src_dir/taglist.diff

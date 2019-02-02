@@ -1,0 +1,10 @@
+--- winmanager/plugin/winmanager.vim	2019-02-02 16:43:33.394683613 +0800
++++ /home/wangyunxiang/.vim/bundle/winmanager/plugin/winmanager.vim	2019-02-01 16:17:49.374530517 +0800
+@@ -1062,6 +1062,7 @@
+ 		call s:CloseWindowsManager()
+ 	else
+ 		call s:StartWindowsManager()
++		exe 'q'
+ 	end
+ endfunction
+ 
